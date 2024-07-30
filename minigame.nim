@@ -5,16 +5,6 @@ import variables
 
 proc startMinigame*()=
     #om = 0
-
-    var cursor = initObj(
-    pos = vec2i(104, 48),
-    tileId = allocObjTiles(gfxCursor),  # Allocate tiles for a single frame of animation.
-    palId = acquireObjPal(gfxCursor),   # Obtain palette.
-    size = gfxCursor.size,              # Set to correct size.
-    )
-    graphic = gfxCursor
-    objMem[1] = cursor
-
     #initSprite(bal1)
     #initSprite(bal2)
     #initSprite(bal3)  
@@ -32,3 +22,14 @@ proc playMinigame*()=
         cursorpos.x += 1
 
     objmem[1].pos = cursorpos
+
+# proc makeAssets*()=
+#     var cursor = initObj(
+#     pos = vec2i(104, 48),
+#     tileId = allocObjTiles(gfxCursor),  # Allocate tiles for a single frame of animation.
+#     palId = acquireObjPal(gfxCursor),   # Obtain palette.
+#     size = gfxCursor.size,              # Set to correct size.
+#     )
+
+#     objMem[1] = cursor
+#     copyFrame(addr objTileMem[cursor.tileId], gfxCursor, frame = 0)

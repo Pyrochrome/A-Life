@@ -1,6 +1,6 @@
 import natu/[video, bios, irq, input, math, mgba, maxmod]
 import natu/[graphics, backgrounds]
-import camera, behavior, minigame, pet, variables
+import camera, behavior, minigame, pet, variables, posattr
 #from pragma import ThumbCodeInEwram
 
 var gameMode = title
@@ -27,7 +27,7 @@ proc DrawScreen()=
   bgofs[1].x = (-camOffset.x).int16
   bgofs[1].y = (-camOffset.y).int16
   #for obj in mitems(objMem):
-    #copyFrame(addr objTileMem[tileId], graphic, frame = 0)
+   # copyFrame(addr objTileMem[p.tileId], graphic, frame = 0)
   flushPals()
 
 proc OnVBlank()=
@@ -76,6 +76,7 @@ proc main =
     bgcnt[1].load(bgHill)
     camInit()
     #om = 0
+    initObjects()
     dispcnt.init(layers = {lBg0, lBg1, lObj }, obj1d = true)
     for obj in mitems(objMem):
         obj.hide()
@@ -96,7 +97,7 @@ proc main =
     while true:
         keyPoll()
         update()
-        debug()
+        #debug()
         maxmod.frame()
         #anim.update
         VBlankIntrWait()

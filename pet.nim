@@ -5,13 +5,14 @@ import variables, camera
 proc startMode*()=
     
     var pet = initObj(
-    pos = vec2i(100, 50),
+    pos = vec2i(104, 83),
     tileId = allocObjTiles(gfxPet),  # Allocate tiles for a single frame of animation.
     palId = acquireObjPal(gfxPet),   # Obtain palette.
     size = gfxPet.size,              # Set to correct size.
     )
-    graphic = gfxPet
+    #graphic = gfxPet
     objMem[0] = pet
+    copyFrame(addr objTileMem[pet.tileId], gfxPet, frame = 0)
 
     camInit()
     dispcnt.bg0 = false

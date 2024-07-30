@@ -27,7 +27,7 @@
             "miDebuggerPath": "${env:DEVKITARM}/bin/arm-none-eabi-gdb",
             "setupCommands": [
                 {
-                    "text": "shell \"mgba\" -g \"${workspaceFolder}/life.elf\" &"
+                    "text": "shell \"mgba-qt\" -g \"${workspaceFolder}/life.elf\" &"
                 }
             ]
             }
