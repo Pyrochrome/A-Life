@@ -5,8 +5,11 @@ let soundbankBin* = static staticRead("./soundbank.bin").MmSoundbankPtr
 
 type
   Sample* {.size: 4.} = enum
+    sfxChew
     sfxChirp
     sfxGiggle
     sfxPop
+    sfxTummy
+    sfxYawn
   Module* {.size: 4.} = enum
     modOct
