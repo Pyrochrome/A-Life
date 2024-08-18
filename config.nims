@@ -2,7 +2,7 @@ import os, strutils
 import std/algorithm
 import natu/config
 
-const main = "life.nim"         # path to project file
+const main = "source/life.nim"         # path to project file
 const name = splitFile(main).name      # name of ROM
 
 put "natu.gameTitle", "LIFE"          # max 12 chars, uppercase
@@ -12,7 +12,9 @@ if projectPath() == thisDir() / main:
   # This runs only when compiling the project file:
   gbaCfg()                             # set C compiler + linker options for GBA target
   switch "os", "standalone"
-  switch "gc", "none"
+  switch "gc", "arc"
+  switch "define", "useMalloc"
+  switch "define", "noSignalHandler"
   switch "checks", "off"               # toggle assertions, bounds checking, etc.
   switch "path", projectDir()          # allow imports relative to the main file
   switch "header"                      # output "{project}.h"

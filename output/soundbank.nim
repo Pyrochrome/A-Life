@@ -10,6 +10,8 @@ type
     sfxGiggle
     sfxPop
     sfxTummy
+    sfxWash
     sfxYawn
   Module* {.size: 4.} = enum
+    modFlower
     modOct

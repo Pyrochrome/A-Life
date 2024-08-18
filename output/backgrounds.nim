@@ -5,12 +5,12 @@ type
   Background* = enum
     bgHill
     bgMenufull
-    bgTitle
+    bgTitlenew
 
 block:
   {.compile:"./backgrounds/bgHill.c".}
   {.compile:"./backgrounds/bgMenufull.c".}
-  {.compile:"./backgrounds/bgTitle.c".}
+  {.compile:"./backgrounds/bgTitlenew.c".}
   {.compile:"./backgrounds.c".}
 
 let natuBgImgData {.importc, codegenDecl:"extern const $# $#".}: array[Background, cstring]
@@ -20,7 +20,7 @@ let natuBgPalData {.importc, codegenDecl:"extern const $# $#".}: array[Backgroun
 const staticBgData: array[Background, BgData] = [
   bgHill: BgData(kind: bkReg4bpp, w: 32, h: 32, imgWords: 360, mapWords: 512, palHalfwords: 16, palOffset: 0, tileOffset: 0, flags: {bfScreenblock}, regions: @[], tileComp: None, mapComp: None),
   bgMenufull: BgData(kind: bkReg4bpp, w: 32, h: 32, imgWords: 240, mapWords: 512, palHalfwords: 16, palOffset: 1, tileOffset: 5, flags: {}, regions: @[], tileComp: None, mapComp: None),
-  bgTitle: BgData(kind: bkReg4bpp, w: 32, h: 32, imgWords: 264, mapWords: 512, palHalfwords: 16, palOffset: 2, tileOffset: 3, flags: {}, regions: @[], tileComp: None, mapComp: None),
+  bgTitlenew: BgData(kind: bkReg8bpp, w: 32, h: 32, imgWords: 3472, mapWords: 512, palHalfwords: 106, palOffset: 0, tileOffset: 0, flags: {}, regions: @[], tileComp: None, mapComp: None),
 ]
 
 template data*(bg: Background): BgData = staticBgData[bg]

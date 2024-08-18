@@ -1,7 +1,8 @@
-graphics/pet.png	s32x32	4	0	0
-graphics/ball.png	s16x16	4	1	0
-graphics/berry.png	s16x16	4	2	0
-graphics/soap.png	s16x16	4	3	0
-graphics/cursor.png	s32x32	4	4	0
-graphics/cloud.png	s32x32	4	5	0
-graphics/balloon.png	s32x32	4	6	0
+graphics\pet.png	s32x32	4	0	0
+graphics\berry.png	s32x32	4	0	0
+graphics\cursor.png	s32x32	4	1	0
+graphics\cloud.png	s32x32	4	1	0
+graphics\balloon.png	s32x32	4	1	0
+graphics\ball.png	s32x32	4	1	0
+graphics\soap.png	s32x32	4	1	0
+graphics\select.png	s64x64	4	1	0

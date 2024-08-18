@@ -15,10 +15,10 @@
             "miDebuggerServerAddress": "localhost:2345",
 
             "windows": {
-                "miDebuggerPath": "${env:ProgramFiles(x86)}/Arm GNU Toolchain arm-none-eabi/12.2 rel1/bin/arm-none-eabi-gdb.exe",
+                "miDebuggerPath": "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\bin\arm-none-eabi-gdb.exe",
                 "setupCommands": [
                     {
-                    "text": "shell start /b \"\" \"${env:ProgramFiles}/mGBA/mGBA.exe\" -g \"${workspaceFolder}/life.elf\""
+                    "text": "shell start /b \"\" \"E://Games/GBA/mGBA-010.1-win32/mGBA.exe\" -g \"${workspaceFolder}/life.elf\""
                     }
                 ]
             },

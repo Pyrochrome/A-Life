@@ -1,0 +1,9 @@
+{
+    "nim.buildCommand": "c",
+    "nim.inlayHints.exceptionHints.enable": false,
+    "nim.inlayHints.typeHints.enable": false,
+    "nim.project": [
+      "source/life.nim",
+      "config.nims"
+    ]
+  }
