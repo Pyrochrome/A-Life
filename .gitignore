@@ -2,8 +2,9 @@
 /life.elf.map
 /life.gba
 /life.sav
+/RaiseAPet_jam.gba
 /nimcache
 /amap
-/baby.aseprite
-/walk.aseprite
-/menu.aseprite
+/graphics/baby.aseprite
+/graphics/walk.aseprite
+/graphics/menu.aseprite
