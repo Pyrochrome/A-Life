@@ -1,4 +1,4 @@
-import natu/[video, bios, irq, input, math, maxmod]
+import natu/[video, bios, irq, input, math, maxmod, memory]
 import natu/[graphics, backgrounds]
 import data/variables
 import camera, behavior, minigame, maingame, oamdraw
@@ -28,18 +28,14 @@ proc update()=
     case gameMode:
     of title:
         inc seedtimer
-        # if keyHit(kiSelect):
-        #     startMinigame()
-        #     Snapcam(vec2i(0, 0))
-        #     gameMode = minigame
         if keyHit(kiStart):
             musicstate = fadedown
             startMode()
             gameMode = raisepet
+        if keyHit(kiL):
+            dispcnt.bg0 = false
+            gameMode = credits
     of raisepet:
-        # if volume > fp(0.0):
-        #     volume = volume - fp(0.1)
-        # elif volume == fp(0.0) and maxmod.active() == true:
         if minigameFlag == true:
             waitforCam()
         else:
@@ -50,6 +46,16 @@ proc update()=
             waitforCam()
         else:
             playMinigame()
+    of credits:
+        inc seedtimer
+        if keyIsDown(kiUp) and camOffset.y < 0:
+            camTarget.y += 1
+        elif keyIsDown(kiDown) and camOffset.y > -89:
+            camTarget.y -= 1
+        if keyHit(kiB):
+            dispcnt.bg0 = true
+            Snapcam(vec2i(-3, 0))
+            gameMode = title
 
     case musicstate
     of play:
@@ -73,7 +79,7 @@ proc OnVBlank()=
     maxmod.vblank()
     DrawScreen()
 
-# proc debug()=
+# proc debug()=              #As the name implies, these are leftovers from debug testing.
 #     # if keyIsDown(kiUp):
 #     #     camTarget.y += 1
 #     # if keyIsDown(kiDown):
@@ -109,11 +115,14 @@ proc OnVBlank()=
 
 proc main =
     irq.put(iiVBlank, OnVBlank)
+    waitcnt.init(sram = WsSram.N8_S8, rom0 = WsRom0.N3_S1, rom2 = WsRom2.N8_S8, prefetch = true)
     seedtimer = 0
     bgcnt[0].init(prio = 0, cbb = 0, sbb = 8)
     bgcnt[0].is8bpp = true
     bgofs[0].x = (8).int16
     bgcnt[0].load(bgTitlenew)
+    bgcnt[1].init(cbb = 2, sbb = 12)
+    bgcnt[1].load(bgCredit)
     camInit()
     dispcnt.init(layers = {lBg0, lBg1, lBg2, lObj }, obj1d = true)
     for obj in mitems(objMem):
@@ -121,9 +130,8 @@ proc main =
  
     maxmod.init(soundbankBin, 8)
     maxmod.setModuleVolume(volume.toFixed(10))
-    sound = sfxChew
     gameMode = title
-    maxmod.start(modFlower)
+    maxmod.start(modMoon)
     
 
     while true:

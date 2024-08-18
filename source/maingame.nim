@@ -5,6 +5,8 @@ import camera, minigame, oamdraw, behavior
 
 proc startMode*()=
 
+    Snapcam(vec2i(-10, -96))
+    camInit()
     initActor(pet)
     initActor(cursor)
     objMem[1].hide()
@@ -46,8 +48,6 @@ proc startMode*()=
     copyFrame(addr objTileMem[objMem[8].tileId], gfxSelect, frame = 0)
     for i in 5..8:
         objMem[i].hide()
-    camInit()
-    bgcnt[1].init(cbb = 2, sbb = 12)
     bgcnt[1].load(bgHill)
     dispcnt.bg0 = false
     hunger = 0
@@ -85,6 +85,8 @@ proc MenuHandler*()=
                 SelectIcon()
                 camTarget.y = 0
                 minigameFlag = true
+                petstate = idle
+                SetAnim(pet, petIdle)
                 startMinigame()
 
 
@@ -193,8 +195,7 @@ proc MainGame*()=
             SelectIcon()
     elif menuup == true:
         MenuHandler()
-    # if keyHit(kiR):
-    #     dirt += 10
+
 
 
 

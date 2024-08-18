@@ -3,25 +3,25 @@
 extern const char natu_bgHill_ImgData[];
 extern const char natu_bgHill_MapData[];
 extern const char natu_bgHill_PalData[];
-extern const char natu_bgMenufull_ImgData[];
-extern const char natu_bgMenufull_MapData[];
-extern const char natu_bgMenufull_PalData[];
+extern const char natu_bgCredit_ImgData[];
+extern const char natu_bgCredit_MapData[];
+extern const char natu_bgCredit_PalData[];
 extern const char natu_bgTitlenew_ImgData[];
 extern const char natu_bgTitlenew_MapData[];
 extern const char natu_bgTitlenew_PalData[];
 
 const char * const natuBgImgData[] = {
   &natu_bgHill_ImgData,
-  &natu_bgMenufull_ImgData,
+  &natu_bgCredit_ImgData,
   &natu_bgTitlenew_ImgData,
 };
 const char * const natuBgMapData[] = {
   &natu_bgHill_MapData,
-  &natu_bgMenufull_MapData,
+  &natu_bgCredit_MapData,
   &natu_bgTitlenew_MapData,
 };
 const char * const natuBgPalData[] = {
   &natu_bgHill_PalData,
-  &natu_bgMenufull_PalData,
+  &natu_bgCredit_PalData,
   &natu_bgTitlenew_PalData,
 };

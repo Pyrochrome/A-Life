@@ -6,6 +6,7 @@ type Gametypes* = enum
     title = 0
     raisepet
     minigame
+    credits
 
 type behaviorState* = enum # pet state
     idle = 0
@@ -60,19 +61,19 @@ var dirt*: int
 var fun*: int
 var timer*: int
 var seedtimer*: uint32
+var musictimer*: uint8
 var steps* = 0 #number of steps for pet to move
 var random* = 0 #rng seed
 var selector* = left
 var gameMode* = title
-var sound*: Sample  #for debugging purposes
-var volume* = fp(0.5)
+var volume* = fp(0.3)
 var iterations*: int
 var joy* = true
 var currframe*: int
 var dirtlevel* = clean
 var reticle*: Collider
 
-# var textbuffer*: array[20, char]
+
 
 #Actor objects
 var pet* = Actor(graphic: gfxPet, coor: vec2f(104, 83), ca: petIdle, cf: 0, anitimer: 0, oam: 0)
@@ -82,8 +83,8 @@ var balloon2* = Actor(graphic: gfxBalloon, coor: vec2f(138, -37), ca: balMove, c
 var balloon3* = Actor(graphic: gfxBalloon, coor: vec2f(189, -65), ca: balMove, cf: 0, anitimer: 0, oam: 4) #189, 15
 
 var posInt*: Vec2i #integer buffer for position
-var camOffset* = vec2i(-10,-96)
-var camTarget* = vec2i(-10,-96)
+var camOffset* = vec2i(-3, 0) #-10, -96
+var camTarget* = vec2i(-3, 0)
 var petstate* = idle
 
 var actors*: array = [pet, cursor, balloon1, balloon2, balloon3]
@@ -101,5 +102,5 @@ const selectleft* = vec2i(16, 0)
 const selectmiddle* = vec2i(88, 0)
 const selectright* = vec2i(160, 0)
 
-# const volumeFade*: array = [fp(0.0), fp(0.2), fp(0.5), fp(0.7)]
-var musictimer*: uint8
+
+

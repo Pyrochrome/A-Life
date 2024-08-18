@@ -55,14 +55,15 @@ proc processBehavior()=
         petstate = idle
         IsHappy()
     of hungry:
-      if iterations >= 2:
+      if iterations >= 1:
         petstate = idle
         IsHappy()
 
     else:
         discard
 
-    # posInt = vec2i(pet.coor)
+    if petstate != walkright:
+      objMem[0].hflip = false
 
 
 proc UpdatePet*()=
