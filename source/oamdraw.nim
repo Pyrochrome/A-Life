@@ -25,22 +25,22 @@ proc runAnim*()=
         if a.anitimer == anis[a.ca].speed:
             if a.cf == anis[a.ca].frames.high:
                 a.cf = 0
-                if a == pet:
-                    iterations += 1
-                elif a != cursor:
-                    loons[a.oam - 2].iter += 1
+                # if a == pet:
+                #     iterations += 1
+                # elif a != cursor:
+                #     loons[a.oam - 2].iter += 1
             else:
                 a.cf += 1
 
             a.anitimer = 0
 
 
-proc SetAnim*(a: Actor, i: ID)=
+proc setAnim*(a: Actor, i: ID)=
     a.ca = i
     a.cf = 0
     a.anitimer = 0
-    if a == pet:
-        iterations = 0
-    elif a != cursor:
-        loons[a.oam - 2].iter = 0
+    # if a == pet:
+    #     iterations = 0
+    # elif a != cursor:
+    #     loons[a.oam - 2].iter = 0
 

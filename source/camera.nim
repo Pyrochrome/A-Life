@@ -61,7 +61,7 @@ proc camScroll*()=
     reticle.set2.y = reticle.set1.y + 13
 
     for a in actors[2..4]:
-        loons[a.oam - 2].col.set1.x = a.coor.x + 4
+        loons[a.oam - 2]..set1.x = a.coor.x + 4
         loons[a.oam - 2].col.set1.y = a.coor.y
         loons[a.oam - 2].col.set2.x = loons[a.oam - 2].col.set1.x + 23
         loons[a.oam - 2].col.set2.y = loons[a.oam - 2].col.set1.y + 23

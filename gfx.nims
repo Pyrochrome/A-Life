@@ -13,4 +13,8 @@ sharePal:
     graphic "soap.png", size=s32x32
     graphic "select.png", size=s64x64
 
+sharePal:
+    graphic "newpet.png", size=s32x32
+    graphic "click.png", size=s16x16
+
 
