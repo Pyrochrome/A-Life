@@ -5,7 +5,7 @@ import natu/config
 const main = "source/life.nim"         # path to project file
 const name = splitFile(main).name      # name of ROM
 
-put "natu.gameTitle", "LIFE"          # max 12 chars, uppercase
+put "natu.gameTitle", "LIFE2"          # max 12 chars, uppercase
 put "natu.gameCode", "2NTP"            # 4 chars, see GBATEK for info
 
 if projectPath() == thisDir() / main:

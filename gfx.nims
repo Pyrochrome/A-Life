@@ -17,4 +17,7 @@ sharePal:
     graphic "newpet.png", size=s32x32
     graphic "click.png", size=s16x16
 
-
+graphic "samp1.png", size=s8x8
+graphic "samp2.png", size=s8x8
+graphic "samp3.png", size=s8x8
+graphic "grey.png", size=s32x32

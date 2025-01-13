@@ -1,4 +1,4 @@
-import natu/[video, bios, graphics, math]
+import natu/[video, graphics, math]
 import data/[variables, anim_index]
 
 
@@ -27,8 +27,6 @@ proc runAnim*()=
                 a.cf = 0
                 # if a == pet:
                 #     iterations += 1
-                # elif a != cursor:
-                #     loons[a.oam - 2].iter += 1
             else:
                 a.cf += 1
 
@@ -41,6 +39,4 @@ proc setAnim*(a: Actor, i: ID)=
     a.anitimer = 0
     # if a == pet:
     #     iterations = 0
-    # elif a != cursor:
-    #     loons[a.oam - 2].iter = 0
 
